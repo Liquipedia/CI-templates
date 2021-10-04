@@ -3,7 +3,7 @@ name: Code Style CSS
 on: [ workflow_call ]
 
 jobs:
-  test-style:
+  test-css:
     runs-on: ubuntu-latest
 
     steps:
