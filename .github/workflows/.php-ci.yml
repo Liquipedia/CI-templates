@@ -12,9 +12,6 @@ jobs:
       with:
         php_version: 7.3
 
-    - name: Install composer dependencies
-      run: composer install
-
     - name: Run composer tests
       run: composer test
 
@@ -26,9 +23,6 @@ jobs:
     - uses: php-actions/composer@v6
       with:
         php_version: 7.4
-
-    - name: Install composer dependencies
-      run: composer install
 
     - name: Run composer tests
       run: composer test
@@ -43,9 +37,6 @@ jobs:
     - uses: php-actions/composer@v6
       with:
         php_version: 8.0
-
-    - name: Install composer dependencies
-      run: composer install
 
     - name: Run composer tests
       run: composer test
