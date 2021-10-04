@@ -1,0 +1,53 @@
+name: Code Style
+
+on: [ workflow_call ]
+
+jobs:
+  test-php73:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: php-actions/composer@v6
+      with:
+        php_version: 7.3
+
+    - name: Install composer dependencies
+      run: composer install
+
+    - name: Run composer tests
+      run: composer test
+
+  test-php74:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: php-actions/composer@v6
+      with:
+        php_version: 7.4
+
+    - name: Install composer dependencies
+      run: composer install
+
+    - name: Run composer tests
+      run: composer test
+
+    continue-on-error: true
+
+  test-php80:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: php-actions/composer@v6
+      with:
+        php_version: 8.0
+
+    - name: Install composer dependencies
+      run: composer install
+
+    - name: Run composer tests
+      run: composer test
+
+    continue-on-error: true
