@@ -42,3 +42,17 @@ jobs:
       run: composer test
 
     continue-on-error: true
+
+  test-php81:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: php-actions/composer@v6
+      with:
+        php_version: 8.1
+
+    - name: Run composer tests
+      run: composer test
+
+    continue-on-error: true
