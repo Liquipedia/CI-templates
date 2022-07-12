@@ -27,8 +27,6 @@ jobs:
     - name: Run composer tests
       run: composer test
 
-    continue-on-error: true
-
   test-php80:
     runs-on: ubuntu-latest
 
