@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: php-actions/composer@v6
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v7
       with:
         php_version: "7.3"
 
@@ -19,8 +19,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: php-actions/composer@v6
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v7
       with:
         php_version: "7.4"
 
@@ -31,8 +31,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: php-actions/composer@v6
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v7
       with:
         php_version: "8.0"
 
@@ -45,8 +45,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: php-actions/composer@v6
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v7
       with:
         php_version: "8.1"
 
