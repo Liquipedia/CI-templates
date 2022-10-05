@@ -14,9 +14,8 @@ jobs:
     - uses: php-actions/composer@v6
       with:
         php_version: ${{ matrix.php_version }}
-
-    - name: Run composer tests
-      run: composer test
+        command: run-script
+        args: test
 
   test-php-experimental:
     runs-on: ubuntu-latest
@@ -29,8 +28,7 @@ jobs:
     - uses: php-actions/composer@v6
       with:
         php_version: ${{ matrix.php_version }}
-
-    - name: Run composer tests
-      run: composer test
+        command: run-script
+        args: test
 
     continue-on-error: true
