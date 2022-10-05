@@ -14,7 +14,8 @@ jobs:
     - uses: php-actions/composer@v6
       with:
         php_version: ${{ matrix.php_version }}
-    - uses: php-actions/composer@v6
+    - name: Run composer test
+      uses: php-actions/composer@v6
       with:
         php_version: ${{ matrix.php_version }}
         command: run-script
@@ -31,7 +32,8 @@ jobs:
     - uses: php-actions/composer@v6
       with:
         php_version: ${{ matrix.php_version }}
-    - uses: php-actions/composer@v6
+    - name: Run composer test
+      uses: php-actions/composer@v6
       with:
         php_version: ${{ matrix.php_version }}
         command: run-script
