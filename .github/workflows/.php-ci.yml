@@ -7,13 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        PHP_VERSION: ["7.3", "7.4"]
+        php_version: ["7.3", "7.4"]
 
     steps:
     - uses: actions/checkout@v3
     - uses: php-actions/composer@v6
       with:
-        php_version: ${{ matrix.PHP_VERSION }}
+        php_version: ${{ matrix.php_version }}
 
     - name: Run composer tests
       run: composer test
@@ -22,13 +22,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        PHP_VERSION: ["8.0", "8.1", "8.2-rc"]
+        php_version: ["8.0", "8.1", "8.2-rc"]
 
     steps:
     - uses: actions/checkout@v3
     - uses: php-actions/composer@v6
       with:
-        php_version: ${{ matrix.PHP_VERSION }}
+        php_version: ${{ matrix.php_version }}
 
     - name: Run composer tests
       run: composer test
