@@ -3,52 +3,32 @@ name: Code Style PHP
 on: [ workflow_call ]
 
 jobs:
-  test-php73:
+  test-php:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        PHP_VERSION: ["7.3", "7.4"]
 
     steps:
     - uses: actions/checkout@v3
     - uses: php-actions/composer@v7
       with:
-        php_version: "7.3"
+        php_version: ${{ matrix.PHP_VERSION }}
 
     - name: Run composer tests
       run: composer test
 
-  test-php74:
+  test-php-experimental:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        PHP_VERSION: ["8.0", "8.1", "8.2"]
 
     steps:
     - uses: actions/checkout@v3
     - uses: php-actions/composer@v7
       with:
-        php_version: "7.4"
-
-    - name: Run composer tests
-      run: composer test
-
-  test-php80:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - uses: php-actions/composer@v7
-      with:
-        php_version: "8.0"
-
-    - name: Run composer tests
-      run: composer test
-
-    continue-on-error: true
-
-  test-php81:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - uses: php-actions/composer@v7
-      with:
-        php_version: "8.1"
+        php_version: ${{ matrix.PHP_VERSION }}
 
     - name: Run composer tests
       run: composer test
